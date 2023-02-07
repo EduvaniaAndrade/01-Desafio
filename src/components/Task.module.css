@@ -1,0 +1,71 @@
+.taskDetails {
+  width: 46rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 1rem;
+  
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  position: relative;
+}
+
+.taskDetails + .taskDetails {
+  margin-top: 0.75rem;
+}
+
+.taskDetails label {
+  display: flex;
+  margin-right: 12px;
+}
+
+.taskDetails label input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.taskDetails label span {
+  position: relative;
+  height: 1.09rem;
+  width: 1.09rem;
+  border: 1px solid var(--blue-300);
+  border-radius: 50%;
+  cursor: pointer;
+}
+  
+.taskDetails label span::after{
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 3px;
+  height: 6px;
+  border: solid var(--white);
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg); 
+  display: none;
+} 
+
+.taskDetails label input:checked ~ .checkmark {
+  background-color: var(--purple-500);
+}
+  
+.taskDetails label input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.taskDetails .icon {
+  display: flex;
+  position: absolute;
+  right: 1rem;
+}
+
+.taskDetails .icon:hover{
+  cursor: pointer;
+  color: var(--danger-500);
+}
